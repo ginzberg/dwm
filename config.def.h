@@ -28,15 +28,14 @@ static const Rule rules[] = {
 	 *	WM_CLASS(STRING) = instance, class
 	 *	WM_NAME(STRING) = title
 	 */
-	/* class      instance    title       tags mask     isfloating   monitor */
-	{ "Gimp",     NULL,       NULL,       0,            1,           -1 },
-	{ "Firefox",  NULL,       NULL,       1 << 8,       0,           -1 },
-	{ "discord",  NULL,       NULL,       1,            0,           1 },
-	{ "ezquake.bin", NULL,    NULL,       2,            0,           2 },
-	{ "brave-browser", NULL,  NULL,       1,            0,           2 },
-	{ "obs",      NULL,       NULL,       2,            0,           1 },
-	{ "Steam",    NULL,       NULL,       2,            0,           2 }
-
+	/* class      instance    title       tags mask     iscentered	isfloating   monitor */
+	{ "Gimp",     NULL,       NULL,       0,            0,		1,           -1 },
+	{ "Firefox",  NULL,       NULL,       1 << 8,       0, 		0,           -1 },
+	{ "discord",  NULL,       NULL,       1,            0, 		0,            1 },
+	{ "ezquake.bin", NULL,    NULL,       2,            0, 		0,            2 },
+	{ "brave-browser", NULL,  NULL,       1,            0, 		0,            2 },
+	{ "obs",      NULL,       NULL,       2,            0, 		0,            1 },
+	{ "Steam",    NULL,       NULL,       2,            0,          0, 	      2 }
 };
 
 /* layout(s) */
