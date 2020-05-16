@@ -35,7 +35,8 @@ static const Rule rules[] = {
 	{ "ezquake.bin", NULL,    NULL,       2,            0, 		0,            2 },
 	{ "brave-browser", NULL,  NULL,       1,            0, 		0,            2 },
 	{ "obs",      NULL,       NULL,       2,            0, 		0,            1 },
-	{ "Steam",    NULL,       NULL,       2,            0,          0, 	      2 }
+	{ "Steam",    NULL,       NULL,       2,            0,          0, 	      2 },
+	{ "st",	      NULL,	  NULL,       0,            1,          1,            2 }
 };
 
 /* layout(s) */
