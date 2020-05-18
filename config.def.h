@@ -7,8 +7,8 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { 	
-	"-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1",
-	"-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1" 
+	"-wuncon-siji-medium-r-normal--17-100-75-75-c-80-iso10646-1",
+	"-xos4-terminus-medium-r-normal--14-120-72-72-c-60-iso10646-1" 
 };
 static const char dmenufont[]       = "-xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1";
 static char normbgcolor[]           = "#222222";
