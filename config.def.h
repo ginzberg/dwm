@@ -14,31 +14,32 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Hack Nerd Font:size=14" };
 static const char dmenufont[]       = "Hack Nerd Font:size=14";
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
 static const char col1[]            = "#ffffff";
 static const char col2[]            = "#ffffff";
 static const char col3[]            = "#ffffff";
 static const char col4[]            = "#ffffff";
 static const char col5[]            = "#ffffff";
 static const char col6[]            = "#ffffff";
+static char normbgcolor[]           = "#222222";
+static char normbordercolor[]       = "#444444";
+static char normfgcolor[]           = "#bbbbbb";
+static char selfgcolor[]            = "#eeeeee";
+static char selbordercolor[]        = "#005577";
+static char selbgcolor[]            = "#005577";
 
 enum { SchemeNorm, SchemeCol1, SchemeCol2, SchemeCol3, SchemeCol4,
        SchemeCol5, SchemeCol6, SchemeSel }; /* color schemes */
 
-static const char *colors[][3]      = {
-	/*               fg         bg         border   */
-	[SchemeNorm]  = { col_gray3, col_gray1, col_gray2 },
-	[SchemeCol1]  = { col1,      col_gray1, col_gray2 },
-	[SchemeCol2]  = { col2,      col_gray1, col_gray2 },
-	[SchemeCol3]  = { col3,      col_gray1, col_gray2 },
-	[SchemeCol4]  = { col4,      col_gray1, col_gray2 },
-	[SchemeCol5]  = { col5,      col_gray1, col_gray2 },
-	[SchemeCol6]  = { col6,      col_gray1, col_gray2 },
-	[SchemeSel]   = { col_gray4, col_cyan,  col_cyan  },
+static char *colors[][3] = {
+       /*               fg           bg           border   */
+       [SchemeNorm] = { normfgcolor, normbgcolor, normbordercolor },
+       [SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
+	     [SchemeCol1]  = { normfgcolor, normbgcolor, normbordercolor },
+	     [SchemeCol2]  = { normfgcolor, normbgcolor, normbordercolor },
+	     [SchemeCol3]  = { normfgcolor, normbgcolor, normbordercolor },
+	     [SchemeCol4]  = { normfgcolor, normbgcolor, normbordercolor },
+	     [SchemeCol5]  = { normfgcolor, normbgcolor, normbordercolor },
+	     [SchemeCol6]  = { normfgcolor, normbgcolor, normbordercolor },
 };
 
 /* tagging */
@@ -84,7 +85,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_cyan, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
 
 static const Key keys[] = {
@@ -116,6 +117,7 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
