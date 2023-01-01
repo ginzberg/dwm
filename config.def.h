@@ -58,7 +58,7 @@ static const Rule rules[] = {
  	{ "discord",  	NULL,       NULL,       1,            0,            1 },
  	{ "obs",      	NULL,       NULL,       1 << 1,       0,            1 },
  	{ "Steam",    	NULL,       NULL,       1 << 3,       0,            0 },
-  { "blocks",     NULL,       NULL,       1 << 8,       0,           -1 },
+  { "blocks",     NULL,       NULL,       0 << 8,       1,           -1 },
 };
 
 /* layout(s) */
