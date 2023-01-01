@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#include <X11/XF86keysym.h>
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
@@ -102,6 +104,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
+  { MODKEY,			                  XK_minus,	 spawn,		       SHCMD("pamixer --allow-boost -d 5; kill -36 $(pidof dwmblocks)") },
+  { MODKEY|ShiftMask,	  	        XK_minus,	 spawn,		       SHCMD("pamixer --allow-boost -d 15; kill -36 $(pidof dwmblocks)") },
+	{ MODKEY,			                  XK_equal,	 spawn,		       SHCMD("pamixer --allow-boost -i 5; kill -36 $(pidof dwmblocks)") },
+	{ MODKEY|ShiftMask,		          XK_equal,	 spawn,		       SHCMD("pamixer --allow-boost -i 15; kill -36 $(pidof dwmblocks)") },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
@@ -115,6 +121,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
+  { 0,                            XF86XK_AudioMute,		      spawn,		SHCMD("pamixer -t; kill -36 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioRaiseVolume,	spawn,		SHCMD("pamixer --allow-boost -i 3; kill -36 $(pidof dwmblocks)") },
+	{ 0,                            XF86XK_AudioLowerVolume,	spawn,		SHCMD("pamixer --allow-boost -d 3; kill -36 $(pidof dwmblocks)") },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 };
 
