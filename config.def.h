@@ -61,7 +61,7 @@ static const Rule rules[] = {
  	{ "obs",      	NULL,       NULL,       1 << 1,       0,         NULL,       1 },
  	{ "Steam",    	NULL,       NULL,       1 << 3,       0,         NULL,       0 },
   { "blocks",     NULL,       NULL,       0,            1,           "100% 0% 800W 800H",   -1 },
-  { "bigblock", NULL,       NULL,       0,            1,           "100% 0% 1500W 800H",    -1 },
+  { "bigblock", NULL,       NULL,       0,            1,           "100% 0% 1500W 900H",    -1 },
   { "e1",       NULL,       NULL,       0,            1,           "0x 0y 800W 800H",       -1 },
   { "e2",       NULL,       NULL,       0,            1,           "9999X 0y 800W 800H",    -1 },
   { "e3",       NULL,       NULL,       0,            1,           "0x 9999y 800W 800H",    -1 },
