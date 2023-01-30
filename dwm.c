@@ -57,7 +57,7 @@
 #define MOUSEMASK               (BUTTONMASK|PointerMotionMask)
 #define WIDTH(X)                ((X)->w + 2 * (X)->bw + gappx)
 #define HEIGHT(X)               ((X)->h + 2 * (X)->bw + gappx)
-#define TAGMASK                 ((1 << LENGTH(tags)) - 1)
+#define TAGMASK                 ((1 << TAGLENGTH) - 1)
 #define TEXTW(X)                (drw_fontset_getwidth(drw, (X)) + lrpad)
 #define TTEXTW(X)               (drw_fontset_getwidth(drw, (X)))
 
@@ -352,7 +352,7 @@ static Systray *systray =  NULL;
 #include "config.h"
 
 /* compile-time check if all tags fit into an unsigned int bit array. */
-struct NumTags { char limitexceeded[LENGTH(tags) > 31 ? -1 : 1]; };
+struct NumTags { char limitexceeded[TAGLENGTH > 31 ? -1 : 1]; };
 
 /* function implementations */
 void
@@ -520,7 +520,7 @@ buttonpress(XEvent *e)
                 if (ev->x < ble - blw) {
                         i = -1, x = -ev->x;
                         do
-                                x += TEXTW(tags[++i]);
+                                x += TEXTW(tags[selmon->num][++i]);
                         while (x <= 0);
                         click = ClkTagBar;
                         arg.ui = 1 << i;
@@ -900,10 +900,10 @@ drawbar(Monitor *m)
 			urg |= c->tags;
 	}
 	x = 0;
-	for (i = 0; i < LENGTH(tags); i++) {
-		w = TEXTW(tags[i]);
+	for (i = 0; i < TAGLENGTH; i++) {
+		w = TEXTW(tags[m->num][i]);
 		drw_setscheme(drw, scheme[m->tagset[m->seltags] & 1 << i ? SchemeSel : SchemeNorm]);
-		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[i], urg & 1 << i);
+		drw_text(drw, x, 0, w, bh, lrpad / 2, tags[m->num][i], urg & 1 << i);
 		if (occ & 1 << i)
 			drw_rect(drw, x + boxs, boxs, boxw, boxw,
 				m == selmon && selmon->sel && selmon->sel->tags & 1 << i,
