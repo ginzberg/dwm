@@ -53,8 +53,8 @@ static char *colors[][3] = {
 /* tagging */
 #define TAGLENGTH 5
 static const char *tags[][TAGLENGTH] = {
-	{ "", "", "", "󰓓", "" },
-	{ "󰙯", "", "", "󰢹", "" },
+	{ "", "󰙯", "", "󰓓", "" },
+	{ "", "", "", "󰢹", "" },
 };
 
 static const Rule rules[] = {
@@ -66,9 +66,10 @@ static const Rule rules[] = {
 	{ "Gimp",     	NULL,       NULL,       0,            1,         NULL,      -1 },
 	{ "Firefox",  	NULL,       NULL,       1 << 8,       0,         NULL,      -1 },
  	{ "quake.bin", 	NULL,       NULL,       1 << 2,       0,         NULL,       0 },
- 	{ "discord",  	NULL,       NULL,       1,            0,         NULL,       1 },
+ 	{ "discord",  	NULL,       NULL,       1,            0,         NULL,      -1 },
  	{ "obs",      	NULL,       NULL,       1 << 1,       0,         NULL,       1 },
  	{ "Steam",    	NULL,       NULL,       1 << 3,       0,         NULL,       0 },
+ 	{ "steam",    	NULL,       NULL,       1 << 3,       0,         NULL,       0 },
   { "blocks",     NULL,       NULL,       0,            1,         "100% 20% 800W 400H",     -1 },
   { "bigblock", NULL,       NULL,       0,            1,           "100% 20% 1500W 900H",    -1 },
   { "e1",       NULL,       NULL,       0,            1,           "0x 0y 800W 800H",       -1 },
