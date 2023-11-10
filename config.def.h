@@ -66,7 +66,7 @@ static const Rule rules[] = {
 	{ "Gimp",     	NULL,       NULL,       0,            1,         NULL,      -1 },
 	{ "Firefox",  	NULL,       NULL,       1 << 8,       0,         NULL,      -1 },
  	{ "quake.bin", 	NULL,       NULL,       1 << 2,       0,         NULL,       0 },
- 	{ "discord",  	NULL,       NULL,       1,            0,         NULL,      -1 },
+ 	{ "discord",  	NULL,       NULL,       1 << 1,       0,         NULL,      -1 },
  	{ "obs",      	NULL,       NULL,       1 << 1,       0,         NULL,       1 },
  	{ "Steam",    	NULL,       NULL,       1 << 3,       0,         NULL,       0 },
  	{ "steam",    	NULL,       NULL,       1 << 3,       0,         NULL,       0 },
