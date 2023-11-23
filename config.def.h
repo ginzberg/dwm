@@ -51,10 +51,10 @@ static char *colors[][3] = {
 };
 
 /* tagging */
-#define TAGLENGTH 5
+#define TAGLENGTH 9
 static const char *tags[][TAGLENGTH] = {
-	{ "", "󰙯", "", "󰓓", "" },
-	{ "", "", "", "󰢹", "" },
+	{ "", "󰙯", "", "󰓓", "", "", "", "", "󰢹" },
+//	{ "", "", "", "󰢹", "" },
 };
 
 static const Rule rules[] = {
