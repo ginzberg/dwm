@@ -54,6 +54,7 @@ static char *colors[][3] = {
 #define TAGLENGTH 9
 static const char *tags[][TAGLENGTH] = {
 	{ "", "󰙯", "", "󰓓", "", "", "", "", "󰢹" },
+  { "1", "2", "3", "4", "5", "6", "7", "8", "9" },
 //	{ "", "", "", "󰢹", "" },
 };
 
